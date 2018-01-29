@@ -1,0 +1,15 @@
+{
+  "name": "kabobbot",
+  "version": "0.0.1",
+  "description": "A bot for Kabobrocks",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jakob Roedel",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.2.1",
+    "request": "^2.83.0"
+  }
+}
