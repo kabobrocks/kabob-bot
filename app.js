@@ -79,7 +79,53 @@ client.on('message', message => {
 			switch(args[0]) {
 				case 'commands':
 					complete = true;
-					message.channel.send("These are my current dota commands:\n```lastgame [username]: gives info on registered players' last match\nplayers: lists all registered members\npros [username]: lists all professional players that the user has played with or against\nrank [username]: gives rank of registered members\ntop3 [username]: gives details on users' top 3 heroes```")
+					message.channel.send("These are my current dota commands:\n```leaderboard: lists ranks of all Dota players in server\nlastgame [username]: gives info on registered players' last match\nplayers: lists all registered members\npros [username]: lists all professional players that the user has played with or against\nrank [username]: gives rank of registered members\ntop3 [username]: gives details on users' top 3 heroes```")
+				break;
+				case 'leaderboard':
+					complete = true; 
+					var playerRanks = [];
+					var count = 0;
+					var toOutput = '';
+					var playerArray = Object.keys(dotaArray);
+					for (i = 0; i < playerArray.length; i++) {
+						request({
+							url: "https://api.opendota.com/api/players/" + dotaArray[playerArray[i]],
+							json: true
+						}, function (error, response, body){
+							if (body.rank_tier !== null) {
+								playerRanks.push(body.profile.personaname + " : **" + dotaRanks[body.rank_tier] + "**");
+							} else {
+								playerRanks.push(body.profile.personaname + " : **N/A**");
+							}
+							if (playerRanks.length == playerArray.length) {
+								for(i = 0; i < playerRanks.length; i++) {
+									toOutput += playerRanks[i] + "\n";
+								}
+								message.channel.send({embed: {
+								    color: 3447003,
+								    author: {
+								      name: client.user.username,
+								      icon_url: client.user.avatarURL
+								    },
+								    title: `Kabobrocks Server Ranks`,
+								    description: `Ranks of all of the Dota players in the server`,
+								    fields: [{
+										name: `List`,
+										value: `${toOutput}`
+								      }
+								    ],
+								    timestamp: new Date(),
+								    footer: {
+								      icon_url: client.user.avatarURL,
+								      text: "©Kabobrocks"
+								    }
+								  }
+								});
+							}
+							count++;
+							
+						})
+					}
 				break;
 				case 'players':
 					complete = true;
