@@ -63,6 +63,18 @@ client.on('message', message => {
 				message.channel.send(body);
 			})
 			break;
+		case 'crypto':
+			request({
+				url: "https://coinbin.org/" + args[0],
+				json: true
+			}, function (error, response, body) {
+				if (body['coin'] == null) {
+					message.channel.send('Could not find the cryptocurrency symbol provided');
+				} else {
+					message.channel.send(`The current price (USD) of ${body['coin']['name']} is $${body['coin']['usd']}`);
+				}
+			})
+			break;
 		case 'dog':
 			request({
 				url: "https://dog.ceo/api/breeds/image/random",
@@ -265,6 +277,17 @@ client.on('message', message => {
 				}
 			}
 			break;
+		case 'numberfact':
+			if (!isNaN(args[0]) || args[0] == 'random') {
+				request({
+					url: "http://numbersapi.com/" + args[0],
+				}, function (error, response, body) {
+					message.channel.send(body);
+				})
+			} else {
+				message.channel.send("That's not a number. Please use a number.");
+			}
+			break;
 		case 'pubg':
 			request({
 				url: "https://api.pubgtracker.com/v2/profile/pc/MuskratLove",
@@ -275,6 +298,53 @@ client.on('message', message => {
 			}, function (error, response, body) {
 				console.log(body);
 				message.channel.send(body.error);
+			})
+			break;
+		case 'pokemon':
+			request({
+				url: "http://pokeapi.co/api/v2/pokemon/" + args[0].toLowerCase(),
+				json: true
+			}, function (error, response, body) {
+				if (body['detail'] != null) {
+					message.channel.send("Could not find the selected Pokemon. Please make sure spelling is correct.")
+				} else {
+					var typeString = '';
+					for (i = (body['types'].length - 1); i >= 0; i--) {
+						typeString += body['types'][i]['type']['name'] + "/";
+					}
+					typeString = typeString.slice(0, -1);
+					message.channel.send({embed: {
+					    color: 3447003,
+					    author: {
+					      name: client.user.username,
+					      icon_url: client.user.avatarURL
+					    },
+					    title: `${body['species']['name']}`,
+					    description: `Information about ${body['species']['name']}`,
+						   image: {
+							 url: body['sprites']['front_default']
+						   },
+					    fields: [{
+							name: `Pokedex Number`,
+							value: `${body['id']}`
+					      },
+					      {
+					      	name: `Types`,
+					      	value: `${typeString}`
+					      },
+					      {
+					      	name: `Base Stats`,
+					      	value: "Speed: " + body['stats'][0]['base_stat'] + "\nSpecial Defense: " + body['stats'][1]['base_stat'] + "\nSpecial Attack: " + body['stats'][2]['base_stat'] + "\nDefense: " + body['stats'][3]['base_stat'] + "\nAttack: " + body['stats'][4]['base_stat'] + "\nHP: " + body['stats'][5]['base_stat']
+					      }
+					    ],
+					    timestamp: new Date(),
+					    footer: {
+					      icon_url: client.user.avatarURL,
+					      text: "©Kabobrocks"
+					    }
+					  }
+					});
+				}
 			})
 			break;
 		case 'sc2':
@@ -353,7 +423,7 @@ client.on('message', message => {
 			})
 			break;
 		case 'commands':
-			message.channel.send('These are the current commands that I have available\n```!anime [search]: searches MyAnimeList for anime\n!cat: responds with a random cat picture\n!dog: responds with a random dog picture\n!dota commands: list of Dota 2 commands in the server\n!sc2 commands: list of Starcraft II commands in the server\n!servers: responds with any server information we have for games\n!ud [word]: urban dictionary definition of word```');
+			message.channel.send('These are the current commands that I have available\n```!anime [search]: searches MyAnimeList for anime\n!cat: responds with a random cat picture\n!crypto [symbol]: responds with the current price in USD of the coin\n!dog: responds with a random dog picture\n!dota commands: list of Dota 2 commands in the server\n!numberfact [number]: gives a fact about the number provided\n!pokemon [name]: gives information about the selected Pokemon\n!sc2 commands: list of Starcraft II commands in the server\n!servers: responds with any server information we have for games\n!ud [word]: urban dictionary definition of word```');
 			break;
 		default:
 			break;
