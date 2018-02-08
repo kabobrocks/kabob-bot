@@ -15,6 +15,7 @@ var prefix = "!";
 var request =  require('request');
 
 var dotaArray = {'cel' : '91900156',
+				 'cyni' : '10300373',
 				 'diego': '138509132',
 				 'ferris': '101718397',
 				 'gnarledwolf': '417772917',
@@ -22,6 +23,7 @@ var dotaArray = {'cel' : '91900156',
 				 'kisses' : '947240',
 				 'muskratlove' : '33170675',
 				 'muskratproblem' : '39535136',
+				 'richie' : '34741291',
 				 'teamsneak' : '18007541'};
 
 var blizzardArray = {'kabobrocks'  : {'id':'3127195', 'username':'Kabobrocks'},
