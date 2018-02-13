@@ -1,6 +1,6 @@
 {
   "name": "kabobbot",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A bot for Kabobrocks",
   "main": "app.js",
   "scripts": {
