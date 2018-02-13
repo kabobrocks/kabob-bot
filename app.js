@@ -22,7 +22,7 @@ var dotaArray = {'cel' : '91900156',
 				 'kabobrocks' : '89104101',
 				 'kisses' : '947240',
 				 'muskratlove' : '33170675',
-				 'muskratproblem' : '39535136',
+				 'brett' : '39535136',
 				 'richie' : '34741291',
 				 'teamsneak' : '18007541'};
 
@@ -433,11 +433,11 @@ client.on('message', message => {
 });
 
 client.on('guildMemberAdd', member => {
-	client.channels.get('345698398684577793').send(`${member.user.username} has joined the server. Welcome!`);
+	client.channels.get('411279486307532810').send(`${member.user.username} has joined the server. Welcome!`);
 });
 
 client.on('guildMemberRemove', member => {
-  client.channels.get('345698398684577793').send(`${member.user.username} has left the server.`);
+  client.channels.get('411279486307532810').send(`${member.user.username} has left the server.`);
 });
 
 
@@ -445,7 +445,7 @@ client.on('channelCreate', channel => {
 	console.log(`A ${channel.type} channel by the name of ${channel.name} and was created at ${channel.createdAt} with the ID of ${channel.id}`);
 	if (channel.type === 'text') {
 		channel.sendMessage('Channel successfully created.');
-		client.channels.get('345698398684577793').send(`A new ${channel.type} channel, ${channel.name} has been created. Go check it out`);
+		client.channels.get('411279486307532810').send(`A new ${channel.type} channel, ${channel.name} has been created. Go check it out`);
 	}
 });
 
