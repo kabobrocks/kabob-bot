@@ -14,7 +14,6 @@ module.exports = message => {
 	var args = message.content.split(' ').slice(1);
 	var command = message.content.split(' ')[0];
 	command = command.substr(1);
-	var argresult = args.join(' ');
 
 	try {
 		let cmdFile = require(`../commands/${command}`);

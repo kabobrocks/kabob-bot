@@ -49,28 +49,27 @@ exports.run = function(client, message, args) {
 							toOutput += playerRanks[i] + "\n";
 						}
 						message.channel.send({embed: {
-						    color: 3447003,
-						    author: {
-						      name: client.user.username,
-						      icon_url: client.user.avatarURL
-						    },
-						    title: `Kabobrocks Server Ranks`,
-						    description: `Ranks of all of the Dota players in the server`,
-						    fields: [{
+							color: 3447003,
+							author: {
+								name: client.user.username,
+								icon_url: client.user.avatarURL
+							},
+							title: `Kabobrocks Server Ranks`,
+							description: `Ranks of all of the Dota players in the server`,
+							fields: [{
 								name: `List`,
 								value: `${toOutput}`
-						      }
-						    ],
-						    timestamp: new Date(),
-						    footer: {
-						      icon_url: client.user.avatarURL,
-						      text: "©Kabobrocks"
-						    }
-						  }
+							}
+							],
+							timestamp: new Date(),
+							footer: {
+								icon_url: client.user.avatarURL,
+								text: "©Kabobrocks"
+							}
+						}
 						});
 					}
 					count++;
-					
 				})
 			}
 		break;
@@ -121,24 +120,25 @@ exports.run = function(client, message, args) {
 							}
 						}
 						message.channel.send({embed: {
-						    color: 3447003,
-						    author: {
-						      name: client.user.username,
-						      icon_url: client.user.avatarURL
-						    },
-						    title: `${player}'s Professional Players`,
-						    description: `The professional players that ${player} has played with or against`,
-						    fields: [{
+							color: 3447003,
+							author: {
+								name: client.user.username,
+								icon_url: client.user.avatarURL
+							},
+							title: `${player}'s Professional Players`,
+							description: `The professional players that ${player} has played with or against`,
+							fields: [
+							{
 								name: `Name and Team`,
 								value: `${toSend}`
-						      }
-						    ],
-						    timestamp: new Date(),
-						    footer: {
-						      icon_url: client.user.avatarURL,
-						      text: "©Kabobrocks"
-						    }
-						  }
+							}
+							],
+							timestamp: new Date(),
+							footer: {
+								icon_url: client.user.avatarURL,
+								text: "©Kabobrocks"
+							}
+						}
 						});
 					} else {
 						message.channel.send("The requested user has not played with or against any professional players");
@@ -168,33 +168,34 @@ exports.run = function(client, message, args) {
 						toSend += heroes[top3[i]['hero_id']]['localized_name'] + "\n";
 					}
 					message.channel.send({embed: {
-				    color: 3447003,
-				    author: {
-				      name: client.user.username,
-				      icon_url: client.user.avatarURL
-				    },
-				    title: `${player}'s Top 3 Heroes`,
-				    description: "Top 3 Heroes based on number of wins",
-				    fields: [{
-						name: `${heroes[top3[0]['hero_id']]['localized_name']}`,
-						value: `Wins: ${top3[0]['win']}\nTotal Games: ${top3[0]['games']}\nWin Percentage: ${((top3[0]['win']/top3[0]['games']) * 100).toFixed(2)}%`
-				      },
-				      {
-						name: `${heroes[top3[1]['hero_id']]['localized_name']}`,
-						value: `Wins: ${top3[1]['win']}\nTotal Games: ${top3[1]['games']}\nWin Percentage: ${((top3[1]['win']/top3[1]['games']) * 100).toFixed(2)}%`
-				      },
-				      {
-						name: `${heroes[top3[2]['hero_id']]['localized_name']}`,
-						value: `Wins: ${top3[2]['win']}\nTotal Games: ${top3[2]['games']}\nWin Percentage: ${((top3[2]['win']/top3[2]['games']) * 100).toFixed(2)}%`
-				      }
-				    ],
-				    timestamp: new Date(),
-				    footer: {
-				      icon_url: client.user.avatarURL,
-				      text: "©Kabobrocks"
-				    }
-				  }
-				});
+						color: 3447003,
+						author: {
+							name: client.user.username,
+							icon_url: client.user.avatarURL
+						},
+						title: `${player}'s Top 3 Heroes`,
+						description: "Top 3 Heroes based on number of wins",
+						fields: [
+						{
+							name: `${heroes[top3[0]['hero_id']]['localized_name']}`,
+							value: `Wins: ${top3[0]['win']}\nTotal Games: ${top3[0]['games']}\nWin Percentage: ${((top3[0]['win']/top3[0]['games']) * 100).toFixed(2)}%`
+						},
+						{
+							name: `${heroes[top3[1]['hero_id']]['localized_name']}`,
+							value: `Wins: ${top3[1]['win']}\nTotal Games: ${top3[1]['games']}\nWin Percentage: ${((top3[1]['win']/top3[1]['games']) * 100).toFixed(2)}%`
+						},
+						{
+							name: `${heroes[top3[2]['hero_id']]['localized_name']}`,
+							value: `Wins: ${top3[2]['win']}\nTotal Games: ${top3[2]['games']}\nWin Percentage: ${((top3[2]['win']/top3[2]['games']) * 100).toFixed(2)}%`
+						}
+						],
+						timestamp: new Date(),
+						footer: {
+							icon_url: client.user.avatarURL,
+							text: "©Kabobrocks"
+						}
+					}
+					});
 				})
 			break;
 			default:
