@@ -26,7 +26,7 @@ exports.run = function(client, message, args) {
 	switch(args[0]) {
 		case 'commands':
 			complete = true;
-			message.channel.send("These are my current dota commands:\n```leaderboard: lists ranks of all Dota players in server\nlastgame [username]: gives info on registered players' last match\nplayers: lists all registered members\npros [username]: lists all professional players that the user has played with or against\nrank [username]: gives rank of registered members\ntop3 [username]: gives details on users' top 3 heroes```")
+			message.channel.send("These are my current dota commands:\n```leaderboard: lists ranks of all Dota players in server\nlastgame [username]: gives info on registered players' last match\nmatch [match_id]: gets URL for requested game\nplayers: lists all registered members\npros [username]: lists all professional players that the user has played with or against\nrank [username]: gives rank of registered members\ntop3 [username]: gives details on users' top 3 heroes```")
 		break;
 		case 'leaderboard':
 			complete = true; 
@@ -72,6 +72,19 @@ exports.run = function(client, message, args) {
 					count++;
 				})
 			}
+		break;
+		case 'match':
+			complete = true;
+			request({
+				url: "https://api.opendota.com/api/matches/" + args[1],
+				json: true
+			}, function (error, response, body) {
+				if (body['match_id'] == undefined) {
+					message.channel.send("Could not find the match. Make sure the matcj number is correct.");
+				} else {
+					message.channel.send("https://www.dotabuff.com/matches/" + body['match_id']);
+				}
+			})
 		break;
 		case 'players':
 			complete = true;
