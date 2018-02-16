@@ -17,7 +17,7 @@ module.exports = message => {
 
 	try {
 		let cmdFile = require(`../commands/${command}`);
-			cmdFile.run(client, message, args);
+		cmdFile.run(client, message, args);
 	} catch (err) {
 		console.log(`Command ${command} failed\n${err.stack}`);
 		message.channel.send("That command does not exist");
