@@ -50,10 +50,6 @@ exports.run = function(client, message, args) {
 						}
 						message.channel.send({embed: {
 							color: 3447003,
-							author: {
-								name: client.user.username,
-								icon_url: client.user.avatarURL
-							},
 							title: `Kabobrocks Server Ranks`,
 							description: `Ranks of all of the Dota players in the server`,
 							fields: [{
@@ -134,11 +130,6 @@ exports.run = function(client, message, args) {
 						}
 						message.channel.send({embed: {
 							color: 3447003,
-							author: {
-								name: client.user.username,
-								icon_url: client.user.avatarURL
-							},
-							title: `${player}'s Professional Players`,
 							description: `The professional players that ${player} has played with or against`,
 							fields: [
 							{
@@ -182,10 +173,6 @@ exports.run = function(client, message, args) {
 					}
 					message.channel.send({embed: {
 						color: 3447003,
-						author: {
-							name: client.user.username,
-							icon_url: client.user.avatarURL
-						},
 						title: `${player}'s Top 3 Heroes`,
 						description: "Top 3 Heroes based on number of wins",
 						fields: [

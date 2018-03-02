@@ -15,12 +15,6 @@ exports.run = function(client, message, args) {
 			typeString = typeString.slice(0, -1);
 			message.channel.send({embed: {
 				color: 3447003,
-				author: {
-					name: client.user.username,
-					icon_url: client.user.avatarURL
-				},
-				title: `${body['species']['name']}`,
-				description: `Information about ${body['species']['name']}`,
 				image: {
 					url: body['sprites']['front_default']
 				},
