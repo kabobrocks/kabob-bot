@@ -2,22 +2,10 @@ exports.run = function(client, message, args) {
 	//External Data
 	const heroes = require('../heroes.json');
 	const dotaRanks = require('../dotaranks.json');
+	const dotaArray = require('../settings.json').dotaArray;
 	
 	var request =  require('request');
 	var argresult = args.join(' ');
-
-	var dotaArray = {'cel' : '91900156',
-					 'cyni' : '10300373',
-					 'diego': '138509132',
-					 'ferris': '101718397',
-					 'gnarledwolf': '417772917',
-					 'kabobrocks' : '89104101',
-					 'kisses' : '947240',
-					 'muskratlove' : '33170675',
-					 'brett' : '39535136',
-					 'richie' : '34741291',
-					 'teamsneak' : '18007541'
-	};
 
 	var complete = false;
 	if (args[1]) {

@@ -2,13 +2,8 @@ exports.run = function(client, message, args) {
 
 	//Get our API Token
 	const blizzardapi = require('../settings.json').blizzardapi;
+	const blizzardArray = require('../settings.json').blizzardArray;
 	var request =  require('request');
-
-	var blizzardArray = {'kabobrocks'  : {'id':'3127195', 'username':'Kabobrocks'},
-						 'muskratlove' : {'id':'2353905', 'username':'MuskratLord'},
-						 'mykin'	   : {'id':'2660449', 'username':'Mykin'},
-						 'spiv'		   : {'id': '704322', 'username':'Nuindil'}
-	};
 
 	var complete = false;
 	if (args[1]) {
