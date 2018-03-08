@@ -3,9 +3,10 @@ exports.run = function(client, message, args) {
 	//Get our API Token
 	const imgurapi = require('../settings.json').imgurapi;
 	var request =  require('request');
+	var argsearch = args.join('%20');
 
 	request({
-		url: "https://api.imgur.com/3/gallery/search?q_type=jpg&q=" + args[0].toLowerCase(),
+		url: "https://api.imgur.com/3/gallery/search?q_type=jpg&q=" + argsearch,
 		headers: {
 			"Authorization" : "Client-ID " + imgurapi
 		},

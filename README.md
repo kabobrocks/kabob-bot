@@ -33,7 +33,8 @@ It is written using NodeJS and uses the DiscordJS module
 These are currently the commands supported by Kabob Bot (in order to be recognized by the bot, use an ! before the command at the beginning of the message):  
 * 8ball [question]: Have the Magic 8 Ball answer your question  
 * anime [search]: Searches MyAnimeList for your query and responds with the top result  
-* cat: Responds with a random picture of a cat  
+* cat: Responds with a random picture of a cat
+* commands: Lists all commands for Kabob Bot
 * crypto [symbol]: Responds with the current price in USD of the coin  
 * dog: Responds with a random picture of a dog  
 * dota  
@@ -59,3 +60,4 @@ These are currently the commands supported by Kabob Bot (in order to be recogniz
 * ud [word]: responds with the Urban Dictionary definition of your query
 * weather [zipcode]: gives a snapshot of the weather for the given zipcode
 * wolfram [search]: searches Wolfram Alpha for your search and responds with the top result
+* yt [search]: searches Youtube for your search and returns the first result
