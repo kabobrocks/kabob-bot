@@ -24,9 +24,9 @@ It is written using NodeJS and uses the DiscordJS module
 <br>             "Player Name Goes Here"  : {"id":"BattleNet ID Goes Here", "username":"BattleNet UserID Goes Here"}
 <br>	}
 <br>}
-* Add as many players as you want to the dotaArray and blizzardArray
+  * Add as many players as you want to the dotaArray and blizzardArray
 5. In terminal, go to the root folder of the project and type in "npm start" to start the bot
-* If you see "I'm Online I'm Online" in console, then your bot is online and connected to your server
+  * If you see "I'm Online I'm Online" in console, then your bot is online and connected to your server
 
 ## Commands
 These are currently the commands supported by Kabob Bot (in order to be recognized by the bot, use an ! before the command at the beginning of the message):  
