@@ -14,6 +14,7 @@ It is written using NodeJS and uses the DiscordJS module
 <br>"token":"Your Discord Bot Token Goes Here",
 <br>"pubgapi":"Your API Key From Pubgtracker Goes Here",
 <br>"blizzardapi":"Your Blizzard API Key Goes Here",
+<br>"googleapi":"Your Google API Key Goes Here",
 <br>"generalchannel":"Your Discord General ChannelID Goes Here",
 <br>"wolframapi":"Your Wolfram API Key Goes Here",
 <br>"imgurapi":"Your Imgur API Key Goes Here",
