@@ -45,6 +45,7 @@ These are currently the commands supported by Kabob Bot (in order to be recogniz
   * rank [username]: gives rank of the specified member
   * top3 [username]: gives details on the specified member's top 3 heroes
 * github: provides Github information about the bot
+* img [query]: searches imgur for a random album with the search query
 * numberfact [number]: gives a fact about the number provided. Also works with 'random'
 * pokemon [name]: gives information about the specified Pokemon
 * sc2
