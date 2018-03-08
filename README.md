@@ -14,10 +14,11 @@ It is written using NodeJS and uses the DiscordJS module
 <br>"token":"Your Discord Bot Token Goes Here",
 <br>"pubgapi":"Your API Key From Pubgtracker Goes Here",
 <br>"blizzardapi":"Your Blizzard API Key Goes Here",
-<br>	"generalchannel":"Your Discord General ChannelID Goes Here",
-<br>	"wolframapi":"Your Wolfram API Key Goes Here",
-<br>	"openweatherapi":"Your OpenWeatherAPI Key Goes Here",
-<br>	"dotaArray": {
+<br>"generalchannel":"Your Discord General ChannelID Goes Here",
+<br>"wolframapi":"Your Wolfram API Key Goes Here",
+<br>"imgurapi":"Your Imgur API Key Goes Here",
+<br>"openweatherapi":"Your OpenWeatherAPI Key Goes Here",
+<br>"dotaArray": {
 <br>          "Player Name Goes Here" : "DotaID Goes Here"
 <br>	},
 <br>	"blizzardArray" : {
