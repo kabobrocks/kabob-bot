@@ -15,6 +15,7 @@ It is written using NodeJS and uses the DiscordJS module
 <br>"pubgapi":"Your API Key From Pubgtracker Goes Here",
 <br>"blizzardapi":"Your Blizzard API Key Goes Here",
 <br>"googleapi":"Your Google API Key Goes Here",
+<br>"googlesearchid":"Your Custom Google Engine ID Goes Here",
 <br>"generalchannel":"Your Discord General ChannelID Goes Here",
 <br>"wolframapi":"Your Wolfram API Key Goes Here",
 <br>"imgurapi":"Your Imgur API Key Goes Here",
@@ -47,6 +48,7 @@ These are currently the commands supported by Kabob Bot (in order to be recogniz
   * pros [username]: lists all professional players that the user has played with or against
   * rank [username]: gives rank of the specified member
   * top3 [username]: gives details on the specified member's top 3 heroes
+* g [search]: searches Google and returns top result
 * github: provides Github information about the bot
 * img [query]: searches imgur for a random album with the search query
 * numberfact [number]: gives a fact about the number provided. Also works with 'random'
