@@ -53,6 +53,7 @@ These are currently the commands supported by Kabob Bot (in order to be recogniz
 * img [query]: searches imgur for a random album with the search query
 * numberfact [number]: gives a fact about the number provided. Also works with 'random'
 * pokemon [name]: gives information about the specified Pokemon
+* rps [rock, paper, or scissors]: play Rock Paper Scissors with Kabob Bot
 * sc2
   * achievements [username]: gives the achievement score for the player
   * commands: lists all of the sc2 commands for the bot
