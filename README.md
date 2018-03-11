@@ -24,8 +24,11 @@ It is written using NodeJS and uses the DiscordJS module
 <br>          "Player Name Goes Here" : "DotaID Goes Here"
 <br>	},
 <br>	"blizzardArray" : {
-<br>             "Player Name Goes Here"  : {"id":"BattleNet ID Goes Here", "username":"BattleNet UserID Goes Here"}
+<br>             "Player Name Goes Here"  : {"id":"Starcarft ID Goes Here", "username":"BattleNet UserID Goes Here"}
 <br>	}
+<br>  "diabloArray" : {
+<br>    "Player Name Goes Here" : {"id":"BattleNet 4 digit ID Goes Here", "username":"BattleNet UserID Goes Here"}
+<br>  }
 <br>}
   * Add as many players as you want to the dotaArray and blizzardArray
 5. In terminal, go to the root folder of the project and type in "npm start" to start the bot
@@ -38,7 +41,12 @@ These are currently the commands supported by Kabob Bot (in order to be recogniz
 * cat: Responds with a random picture of a cat
 * commands: Lists all commands for Kabob Bot
 * crypto [symbol]: Responds with the current price in USD of the coin  
-* dog: Responds with a random picture of a dog  
+* dog: Responds with a random picture of a dog
+* d3
+  * commands: lists all of the Diablo 3 commands for the bot
+  * heroes [username]: returns a list of all characters for the registered user
+  * paragon [username]: returns the registered user's paragon level
+  * players: returns a list of all registered members
 * dota  
   * commands: lists all of the Dota commands for the bot
   * leaderboard: lists ranks of all Dota players on the server
@@ -51,6 +59,7 @@ These are currently the commands supported by Kabob Bot (in order to be recogniz
 * g [search]: searches Google and returns top result
 * github: provides Github information about the bot
 * img [query]: searches imgur for a random album with the search query
+* lizard: responds with a random picture of a lizard
 * numberfact [number]: gives a fact about the number provided. Also works with 'random'
 * pokemon [name]: gives information about the specified Pokemon
 * rps [rock, paper, or scissors]: play Rock Paper Scissors with Kabob Bot
