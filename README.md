@@ -70,6 +70,7 @@ These are currently the commands supported by Kabob Bot (in order to be recogniz
   * race [username]: responds with the most played race of the user
 * servers: lists all of the IP addresses for servers of other games that we play
 * shouldi [question]: responds with a yes or no gif to your question
+* stock [symbol]: gives information from the NYSE on the given stock
 * ud [word]: responds with the Urban Dictionary definition of your query
 * weather [zipcode]: gives a snapshot of the weather for the given zipcode
 * wolfram [search]: searches Wolfram Alpha for your search and responds with the top result
