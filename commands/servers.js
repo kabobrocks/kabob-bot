@@ -1,3 +1,3 @@
 exports.run = function(client, message, args) {
-	message.channel.send('Factorio: 199.36.220.142:34197');
+	message.channel.send('Minecraft 1.12.2: 107.181.173.34:25570');
 };

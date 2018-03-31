@@ -40,6 +40,10 @@ These are currently the commands supported by Kabob Bot (in order to be recogniz
 * anime [search]: Searches MyAnimeList for your query and responds with the top result  
 * cat: Responds with a random picture of a cat
 * commands: Lists all commands for Kabob Bot
+* cowsay
+  * commands: lists all of the cowsay commands for the bot
+  * styles: lists all cowsay styles
+  * [style] [text]: returns your text with the given style. If no style is given, defaults to cow 
 * crypto [symbol]: Responds with the current price in USD of the coin  
 * dog: Responds with a random picture of a dog
 * d3
