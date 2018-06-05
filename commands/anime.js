@@ -7,6 +7,7 @@ exports.run = function(client, message, args) {
 		url: "https://initiate.host/search/" + argsearch,
 		json: true
 	}, function (error, response, body) {
-		message.channel.send(body['result'][0]['url']);
+		message.channel.send("Anime Search is down. Sorry friend");
+		//message.channel.send(body['result'][0]['url']);
 	})
 };

@@ -31,7 +31,7 @@ It is written using NodeJS and uses the DiscordJS module
 <br>  }
 <br>}
   * Add as many players as you want to the dotaArray and blizzardArray
-5. In terminal, go to the root folder of the project and type in "npm start" to start the bot
+5. In terminal, go to the root folder of the project and type in "node app.js" to start the bot
   * If you see "I'm Online I'm Online" in console, then your bot is online and connected to your server
 
 ## Commands

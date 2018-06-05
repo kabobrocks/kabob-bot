@@ -24,4 +24,6 @@ client.on('channelCreate', channel => {
 	}
 });
 
+client.on('error', (error) => console.log(error));
+
 client.login(token);
