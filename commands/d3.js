@@ -27,7 +27,7 @@ exports.run = function(client, message, args) {
 					json: true
 				}, function (error, response, body) {
 					var numHeroes = body['heroes'].length;
-
+					console.log(body['heroes'][1]);
 					var toReturn = '';
 					for (i = 0; i < numHeroes; i++) {
 						toReturn += "**Name:** " + body['heroes'][i]['name'] + "\n";
@@ -45,11 +45,22 @@ exports.run = function(client, message, args) {
 					url: "https://us.api.battle.net/d3/profile/" + diabloArray[player]['username'] + "%23" + diabloArray[player]['id'] + "/?locale=en_US&apikey=" + blizzardapi,
 					json: true
 				}, function (error, response, body) {
-					message.channel.send(args[1] + " has achieved Paragon Level " + body['paragonLevel']);
+					toReturn = '';
+					toReturn += "**Lifetime Paragon Level:** " + body['paragonLevel'] + "\n";
+					if (body['paragonLevelHardcore'] > 0) {
+						toReturn += "**Lifetime Hardcore Paragon Level:** " + body['paragonLevelHardcore'] + "\n";
+					}
+					if (body['paragonLevelSeason'] > 0) {
+						toReturn += "**Seasonal Paragon Level:** " + body['paragonLevelSeason'] + "\n";
+					}
+					if (body['paragonLevelSeasonHardcore'] > 0) {
+						toReturn += "**Seasonal Hardcore Paragon Level:** " + body['paragonLevelSeasonHardcore'];
+					}
+					message.channel.send(toReturn);
 				})
 				break;
 			default:
-				message.channel.send("Not a valid sc2 command");
+				message.channel.send("Not a valid d3 command");
 			break;
 		}
 	} else {
