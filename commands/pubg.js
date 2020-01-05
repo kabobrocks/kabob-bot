@@ -4,17 +4,18 @@
 exports.run = function(client, message, args) {
 
 	//Get our API Token
+	//Note to me, this new api key is for fortnite
 	const pubgapi = require('../settings.json').pubgapi;
 	var request =  require('request');
 
 	request({
-		url: "https://api.pubgtracker.com/v2/profile/pc/MuskratLove",
+		url: "https://public-api.tracker.gg/apex/v1/standard/profile/5/_Cyynnix_",
 		headers: {
-			"TRN-Api-Key": pubgapi
+			"TRN-Api-Key": "6c51ff64-f326-426e-bed3-0d77abe5928c"
 		},
 		json: true
 	}, function (error, response, body) {
-		console.log(body);
+		console.log(body.data);
 		//message.channel.send(body.error);
 	})
 };
